@@ -1,0 +1,40 @@
+.jumbotron {
+  background: linear-gradient(rgba(62, 62, 62, 0.6), rgba(62, 62, 62, 0.6)),
+    url("../pictures/programming_background.jpeg") center;
+  background-size: cover;
+  color: white;
+  min-height: 500px;
+  border-radius: 0;
+}
+
+.jumbotron h1 {
+  font-size: 70px;
+  margin-bottom: 10px;
+}
+
+.changingHeader {
+  color: white;
+  background: rgba(39, 211, 138, 0.8);
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.jumbotron h2 {
+  font-size: 60px;
+}
+
+.jumbotron p {
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+.jumbotron button {
+  margin-top: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  .jumbotron h1 {
+    font-size: 65px;
+    max-height: 244px;
+  }
+}

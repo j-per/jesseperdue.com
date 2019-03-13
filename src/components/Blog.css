@@ -1,0 +1,60 @@
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.blog_p {
+  color: white;
+}
+
+.blog_box_1,
+.blog_box_2,
+.blog_box_3 {
+  border-radius: 10px;
+  transition: all 500ms;
+  box-shadow: 2px 2px 2px rgb(85, 85, 85);
+}
+
+.blog_box_1:hover,
+.blog_box_2:hover,
+.blog_box_3:hover {
+  transform: translateY(-10px);
+}
+
+.blog_box_1 {
+  background: linear-gradient(rgba(43, 196, 131, 0.5), rgba(5, 82, 255, 0.5)),
+    url("../pictures/beach.jpeg");
+}
+
+.blog_box_2 {
+  background: linear-gradient(
+      to right,
+      rgba(95, 195, 228, 0.5),
+      rgba(229, 93, 135, 0.5)
+    ),
+    url("../pictures/city.jpeg") center; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.blog_box_3 {
+  background: linear-gradient(
+      to right,
+      rgba(36, 11, 54, 0.5),
+      rgba(195, 20, 50, 0.5)
+    ),
+    url("../pictures/guitar.jpeg") center; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.custom_button {
+  background-color: rgb(39, 211, 138);
+  border-color: rgb(39, 211, 138);
+  align-self: flex-start;
+}
+
+.custom_button:hover {
+  background-color: rgb(32, 179, 117);
+  border-color: rgb(6, 148, 89);
+}
+
+.add_padding {
+  padding: 20px 10px;
+}
