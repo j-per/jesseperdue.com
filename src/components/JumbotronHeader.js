@@ -44,7 +44,7 @@ class JumbotronHeader extends React.Component {
           <Row>
             <Col lg={true}>
               <p>
-                I am a front-end developer who specializes in Oonst. Let me help
+                I am a front-end developer who specializes in React. Let me help
                 you grow your business, blog, or whatever else you had in mind
                 with the power of the web.
               </p>
