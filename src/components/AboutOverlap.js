@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import Zoom from "react-reveal/Zoom";
 import "./AboutOverlap.css";
 
 class AboutOverlap extends React.Component {
@@ -12,7 +13,9 @@ class AboutOverlap extends React.Component {
         >
           <Row>
             <Col md className="col_1">
-              <i className="fas fa-pencil-alt fa-4x my-5" />
+              <Zoom delay={800} duration={1500}>
+                <i className="fas fa-pencil-alt fa-4x my-5" />
+              </Zoom>
               <h2>Designer</h2>
               <p className="my-4">
                 I enjoy simplistic, clean, powerful designs that empower users.
@@ -28,7 +31,9 @@ class AboutOverlap extends React.Component {
               <li className="mb-5">Photosthop</li>
             </Col>
             <Col md className="col_2">
-              <i className="fas fa-code fa-4x my-5" />
+              <Zoom delay={1000} duration={1500}>
+                <i className="fas fa-code fa-4x my-5" />
+              </Zoom>
               <h2>Front-End Developer</h2>
               <p className="my-4">
                 I love building websites and apps writing clean, concise,
@@ -47,7 +52,9 @@ class AboutOverlap extends React.Component {
               <li className="mb-5">Photosthop</li>
             </Col>
             <Col md className="col_3">
-              <i className="fas fa-chalkboard-teacher fa-4x my-5" />
+              <Zoom delay={1200} duration={1500}>
+                <i className="fas fa-chalkboard-teacher fa-4x my-5" />
+              </Zoom>
               <h2>Trainer</h2>
               <p className="my-4">
                 I have a background in ed tech and love teaching people new

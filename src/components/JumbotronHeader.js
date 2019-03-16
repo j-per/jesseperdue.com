@@ -1,10 +1,6 @@
 import React from "react";
 import "./JumbotronHeader.css";
-import Button from "react-bootstrap/Button";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Jumbotron, Button, Container, Row, Col } from "react-bootstrap";
 
 class JumbotronHeader extends React.Component {
   constructor(props) {

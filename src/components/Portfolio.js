@@ -1,14 +1,11 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Fade from "react-reveal";
+import { Container, Row, Col } from "react-bootstrap";
 import "./Portfolio.css";
 
 class Portfolio extends React.Component {
   render() {
     return (
-      <Container className="portfolio_wrapper">
+      <Container className="portfolio_wrapper my-5">
         <Row>
           <Col className="my-5">
             <h1>Portfolio</h1>

@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
-const Header = () => (
+const Navigation = () => (
   <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: "#f7f7f7" }}>
     <Navbar.Brand href="#home" style={{ fontSize: "22px" }}>
       Jesse Perdue
@@ -46,4 +46,4 @@ const Header = () => (
   </Navbar>
 );
 
-export default Header;
+export default Navigation;
