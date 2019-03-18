@@ -1,34 +1,32 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Container, Row, Col } from "react-bootstrap";
 import "./Footer.css";
 
-const footerStyle = {
-  marginLeft: "50px",
-  color: "white"
-};
-
-const Footer = () => (
-  <footer>
-    <Container style={{ textAlign: "center" }}>
-      <Row>
-        <Col>
-          <h5 class="my-3">Self Made</h5>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <h5 class="my-3">Self Made</h5>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <h5 class="my-3">Self Made</h5>
-        </Col>
-      </Row>
-    </Container>
-  </footer>
-);
+class Footer extends React.Component {
+  render() {
+    return (
+      <section className="FooterContent_wrapper">
+        <Container className="FooterContent_Container my-5">
+          <Row>
+            <Col>
+              <a href="#">
+                <i className="fab fa-github fa-2x FooterContent_icon" />
+              </a>
+              <a href="#">
+                <i className="fab fa-codepen fa-2x FooterContent_icon" />
+              </a>
+              <a href="#">
+                <i className="fab fa-twitter fa-2x FooterContent_icon" />
+              </a>
+              <a href="#">
+                <i className="fab fa-linkedin fa-2x FooterContent_icon" />
+              </a>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+    );
+  }
+}
 
 export default Footer;

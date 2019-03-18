@@ -29,12 +29,6 @@ const Navigation = () => (
           Portfolio
         </Nav.Link>
         <Nav.Link
-          href="#features"
-          style={{ fontSize: "18px", marginRight: "20px" }}
-        >
-          Blog
-        </Nav.Link>
-        <Nav.Link
           href="#pricing"
           style={{ fontSize: "18px", marginRight: "20px" }}
         >

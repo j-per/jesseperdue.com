@@ -5,7 +5,7 @@ import "./Portfolio.css";
 class Portfolio extends React.Component {
   render() {
     return (
-      <Container className="portfolio_wrapper my-5">
+      <Container className="portfolio_wrapper">
         <Row>
           <Col className="my-5">
             <h1>Portfolio</h1>

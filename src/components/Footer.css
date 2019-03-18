@@ -1,13 +1,16 @@
-footer {
-  background-color: #047afb;
+.FooterContent_wrapper {
+  text-align: center;
 }
 
-footer ul {
-  list-style-type: none;
-  margin: 0;
+.FooterContent_icon {
+  padding: 10px 10px;
+  background-color: #313131;
+  border-radius: 50%;
+  color: #fff;
+  margin-left: 10px;
 }
 
-footer li {
-  display: inline-block;
-  padding: 20px 0;
+.FooterContent_icon:hover {
+  color: #313131;
+  background-color: #a5a5a5;
 }

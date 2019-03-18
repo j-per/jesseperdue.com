@@ -3,11 +3,10 @@ import Navigation from "./Navigation";
 import JumbotronHeader from "./JumbotronHeader";
 import Expertise from "./Expertise";
 import About from "./About";
-import Footer from "./Footer";
 import AboutOverlap from "./AboutOverlap";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
-import Social from "./Social";
+import Footer from "./Footer";
 
 class App extends React.Component {
   render() {
@@ -20,6 +19,7 @@ class App extends React.Component {
         <AboutOverlap />
         <Portfolio />
         <Contact />
+        <Footer />
       </div>
     );
   }
