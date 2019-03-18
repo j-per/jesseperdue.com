@@ -9,16 +9,19 @@ class Footer extends React.Component {
         <Container className="FooterContent_Container my-5">
           <Row>
             <Col>
-              <a href="#">
+              <a href="https://github.com/j-per" target="_blank">
                 <i className="fab fa-github fa-2x FooterContent_icon" />
               </a>
-              <a href="#">
+              <a href="https://codepen.io/jpound/" target="_blank">
                 <i className="fab fa-codepen fa-2x FooterContent_icon" />
               </a>
-              <a href="#">
+              <a href="https://twitter.com/jesse90perdue" target="_blank">
                 <i className="fab fa-twitter fa-2x FooterContent_icon" />
               </a>
-              <a href="#">
+              <a
+                href="https://www.linkedin.com/in/jesse-perdue-1aa8a996/"
+                target="_blank"
+              >
                 <i className="fab fa-linkedin fa-2x FooterContent_icon" />
               </a>
             </Col>
