@@ -1,6 +1,4 @@
-.portfolio_box_1,
-.portfolio_box_2,
-.portfolio_box_3 {
+[class^="portfolio_box_"] {
   height: 200px;
   width: 400px;
   border-radius: 10px;
@@ -8,10 +6,12 @@
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
 }
 
-.portfolio_box_1:hover,
-.portfolio_box_2:hover,
-.portfolio_box_3:hover {
+[class^="portfolio_box_"]:hover {
   transform: translateY(-10px);
+}
+
+[class^="portfolio_box_"] a {
+  color: white;
 }
 
 .portfolio_box_1 {
@@ -35,10 +35,4 @@
       rgba(195, 20, 50, 0.5)
     ),
     url("../pictures/guitar.jpeg") center; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.portfolio_box_1 a,
-.portfolio_box_2 a,
-.portfolio_box_3 a {
-  color: white;
 }

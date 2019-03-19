@@ -6,7 +6,7 @@ import "./AboutOverlap.css";
 class AboutOverlap extends React.Component {
   render() {
     return (
-      <div className="overlap_wrapper">
+      <section className="overlap_wrapper">
         <Container
           className="justify-content-center overlap"
           style={{ textAlign: "center" }}
@@ -68,7 +68,7 @@ class AboutOverlap extends React.Component {
             </Col>
           </Row>
         </Container>
-      </div>
+      </section>
     );
   }
 }

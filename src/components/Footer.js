@@ -5,7 +5,7 @@ import "./Footer.css";
 class Footer extends React.Component {
   render() {
     return (
-      <section className="FooterContent_wrapper">
+      <section className="FooterContent_wrapper" id="footer">
         <Container className="FooterContent_Container my-5">
           <Row>
             <Col>

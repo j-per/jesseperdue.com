@@ -4,7 +4,7 @@ import "./About.css";
 import Jesse from "../pictures/jesse.png";
 
 const About = () => (
-  <div className="about_container">
+  <section className="about_container" id="about">
     <Container>
       <Row>
         <Col className="d-flex justify-content-center">
@@ -35,7 +35,7 @@ const About = () => (
         </Col>
       </Row>
     </Container>
-  </div>
+  </section>
 );
 
 export default About;
