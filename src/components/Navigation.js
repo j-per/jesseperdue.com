@@ -42,18 +42,6 @@ class Navigation extends React.Component {
             </Link>
             <Link
               activeClass="active"
-              to="portfolio"
-              spy={true}
-              smooth="easeInOutQuint"
-              duration={1000}
-              style={{ fontSize: "18px", marginRight: "20px" }}
-              role="button"
-              className="nav-link"
-            >
-              Portfolio
-            </Link>
-            <Link
-              activeClass="active"
               to="contact"
               spy={true}
               smooth="easeInOutQuint"
