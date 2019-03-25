@@ -17,7 +17,7 @@ class App extends React.Component {
         <Expertise />
         <About />
         <AboutOverlap />
-        <Portfolio />
+        {/* <Portfolio /> */}
         <Contact />
         <Footer />
       </div>
