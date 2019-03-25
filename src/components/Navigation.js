@@ -11,9 +11,7 @@ class Navigation extends React.Component {
         expand="lg"
         style={{ backgroundColor: "#f7f7f7" }}
       >
-        <Navbar.Brand href="#home" style={{ fontSize: "22px" }}>
-          Jesse Perdue
-        </Navbar.Brand>
+        <Navbar.Brand style={{ fontSize: "22px" }}>Jesse Perdue</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
@@ -24,10 +22,11 @@ class Navigation extends React.Component {
               smooth="easeInOutQuint"
               offset={-45}
               duration={1000}
+              style={{ fontSize: "18px", marginRight: "20px" }}
+              role="button"
+              className="nav-link"
             >
-              <Nav.Link style={{ fontSize: "18px", marginRight: "20px" }}>
-                Expertise
-              </Nav.Link>
+              Expertise
             </Link>
             <Link
               activeClass="active"
@@ -35,10 +34,11 @@ class Navigation extends React.Component {
               spy={true}
               smooth="easeInOutQuint"
               duration={1000}
+              style={{ fontSize: "18px", marginRight: "20px" }}
+              role="button"
+              className="nav-link"
             >
-              <Nav.Link style={{ fontSize: "18px", marginRight: "20px" }}>
-                About
-              </Nav.Link>
+              About
             </Link>
             <Link
               activeClass="active"
@@ -46,10 +46,11 @@ class Navigation extends React.Component {
               spy={true}
               smooth="easeInOutQuint"
               duration={1000}
+              style={{ fontSize: "18px", marginRight: "20px" }}
+              role="button"
+              className="nav-link"
             >
-              <Nav.Link style={{ fontSize: "18px", marginRight: "20px" }}>
-                Portfolio
-              </Nav.Link>
+              Portfolio
             </Link>
             <Link
               activeClass="active"
@@ -57,10 +58,11 @@ class Navigation extends React.Component {
               spy={true}
               smooth="easeInOutQuint"
               duration={1000}
+              style={{ fontSize: "18px", marginRight: "20px" }}
+              role="button"
+              className="nav-link"
             >
-              <Nav.Link style={{ fontSize: "18px", marginRight: "20px" }}>
-                Contact
-              </Nav.Link>
+              Contact
             </Link>
           </Nav>
           <Nav />

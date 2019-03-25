@@ -9,7 +9,6 @@
 
 .jumbotron h1 {
   font-size: 70px;
-  margin-bottom: 10px;
 }
 
 .changingHeader {
@@ -26,10 +25,6 @@
 .jumbotron p {
   margin-top: 40px;
   font-size: 20px;
-}
-
-.jumbotron button {
-  margin-top: 40px;
 }
 
 @media only screen and (max-width: 768px) {

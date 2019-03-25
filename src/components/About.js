@@ -13,11 +13,7 @@ const About = () => (
       </Row>
       <Row>
         <Col className="d-flex justify-content-center">
-          <img
-            src={Jesse}
-            alt="picture of Jesse and wife"
-            className="custom_photo"
-          />
+          <img src={Jesse} alt="Jesse and wife" className="custom_photo" />
         </Col>
       </Row>
       <Row

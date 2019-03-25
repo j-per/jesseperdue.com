@@ -1,6 +1,6 @@
 import React from "react";
 import "./JumbotronHeader.css";
-import { Jumbotron, Button, Container, Row, Col } from "react-bootstrap";
+import { Jumbotron, Container, Row, Col } from "react-bootstrap";
 
 class JumbotronHeader extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class JumbotronHeader extends React.Component {
           <Container>
             <Row>
               <Col lg={true}>
-                <h1 class={{ display: "block" }}>
+                <h1 className={{ display: "block" }}>
                   Im Jesse and I like to{" "}
                   <span className="changingHeader">
                     {this.state.words[this.state.counter]}
@@ -47,11 +47,6 @@ class JumbotronHeader extends React.Component {
                 </p>
               </Col>
               <Col />
-            </Row>
-            <Row>
-              <Col lg={true}>
-                <Button className="btn-lg">Contact</Button>
-              </Col>
             </Row>
           </Container>
         </Jumbotron>
