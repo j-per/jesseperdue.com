@@ -24,11 +24,10 @@ class AboutOverlap extends React.Component {
                 Design Tools:
               </h4>
               <li>Adobe XD</li>
-              <li>Photoshop</li>
               <li>Illustrator</li>
               <li>Pen & Paper</li>
               <li>Sketch</li>
-              <li className="mb-5">Photosthop</li>
+              <li className="mb-5">Photoshop</li>
             </Col>
             <Col md className="col_2">
               <Zoom delay={1000} duration={1500}>
@@ -48,8 +47,7 @@ class AboutOverlap extends React.Component {
               <li>Codepen</li>
               <li>Github</li>
               <li>JavaScript</li>
-              <li>HTML & CSS</li>
-              <li className="mb-5">Photosthop</li>
+              <li className="mb-5">HTML & CSS</li>
             </Col>
             <Col md className="col_3">
               <Zoom delay={1200} duration={1500}>
