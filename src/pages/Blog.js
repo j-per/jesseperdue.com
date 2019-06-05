@@ -41,6 +41,10 @@ class Blog extends React.Component {
             date={post.date}
             author={post.author.name}
             image={post.featured_image}
+            slug={post.slug}
+            ID={post.ID}
+            key={post.ID}
+            content={post.content}
           />
         );
       });
