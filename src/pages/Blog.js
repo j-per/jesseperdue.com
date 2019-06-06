@@ -1,21 +1,29 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import BlogCard from "../components/Blog/BlogCard";
-
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+import Button from "../components/Elements/Button";
 
 const BLOG_URL = `https://public-api.wordpress.com/rest/v1.1/sites/jesseperdueblog.home.blog/posts`;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 4rem 30vw;
+  align-items: center;
+  background-color: #282c35;
+`;
+
+const BlogCardWrapper = styled.div`
+  border-radius: 5px;
 `;
 
 const StyleH1 = styled.h1`
   font-size: 100px;
   font-weight: bold;
+  color: #3ac489;
+  text-shadow: 2px 2px #007bff;
 `;
 
 class Blog extends React.Component {
@@ -61,7 +69,7 @@ class Blog extends React.Component {
 
         <Wrapper>
           <StyleH1>Blog</StyleH1>
-          {this.test()}
+          <BlogCardWrapper>{this.test()}</BlogCardWrapper>
         </Wrapper>
       </div>
     );

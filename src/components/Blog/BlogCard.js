@@ -5,36 +5,66 @@ import { Link } from "react-router-dom";
 import Button from "../Elements/Button";
 import PlaceHolderImage from "../../pictures/placeholder.png";
 
-const CardWrapper = styled.section`
-  border-bottom: 5px solid #33bf82;
-  margin: 3rem 0;
+const CardWrapper = styled.div`
+  margin: 1rem 0;
   display: flex;
   position: relative;
-  padding: 2rem 2rem;
-  justify-content: flex-start;
+  padding: 1rem;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 5px;
+  transition: 250ms;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+  }
+  &:hover {
+    color: #111;
+    box-shadow: 0 0 20px #111;
+    background-image: linear-gradient(-90deg, #3ac489, #007bff);
+  }
+`;
+
+const StyledImage = styled.img`
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+`;
+
+const ImageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const TextWrapper = styled.div`
   margin-left: 1rem;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  text-align: right;
+  text-align: left;
+`;
+
+const StyledP = styled.p`
+  font-style: italic;
 `;
 
 const BlogCard = ({ image, title, date, author, ID, content, slug }) => {
   return (
     <CardWrapper>
-      <Link to="/">
-        <img src={image ? image : PlaceHolderImage} />
-      </Link>
+      <ImageWrapper>
+        <Link to={`/blog/${ID}/${slug}`}>
+          <StyledImage src={image ? image : PlaceHolderImage} />
+        </Link>
+        <StyledP>{author}</StyledP>
+        <Link to={`/blog/${ID}/${slug}`}>
+          <Button text="Read" style={{ textAlign: "left" }} />
+        </Link>
+      </ImageWrapper>
       <TextWrapper>
         <h2>{title}</h2>
         <p>{date}</p>
-        <p>{author}</p>
-        <Link to={`/blog/${ID}/${slug}`}>
-          <Button text="Read" id={ID} content={content} />
-        </Link>
       </TextWrapper>
     </CardWrapper>
   );
