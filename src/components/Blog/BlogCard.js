@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import Button from "../Elements/Button";
 import PlaceHolderImage from "../../pictures/placeholder.png";
+import RightArrowIcon from "./RightArrowIcon";
 
 const CardWrapper = styled.div`
   margin: 1rem 0;
@@ -20,15 +20,14 @@ const CardWrapper = styled.div`
     max-width: 300px;
   }
   &:hover {
-    color: #111;
-    box-shadow: 0 0 20px #111;
-    background-image: linear-gradient(-90deg, #3ac489, #007bff);
+    color: white;
+    background: #3ac489;
   }
 `;
 
 const StyledImage = styled.img`
-  width: 200px;
-  height: 200px;
+  width: ${props => props.width};
+  height: ${props => props.height};
   object-fit: cover;
   margin-bottom: 1rem;
   border-radius: 5px;
@@ -44,6 +43,7 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
+  position: relative;
 `;
 
 const StyledP = styled.p`
@@ -55,16 +55,18 @@ const BlogCard = ({ image, title, date, author, ID, content, slug }) => {
     <CardWrapper>
       <ImageWrapper>
         <Link to={`/blog/${ID}/${slug}`}>
-          <StyledImage src={image ? image : PlaceHolderImage} />
-        </Link>
-        <StyledP>{author}</StyledP>
-        <Link to={`/blog/${ID}/${slug}`}>
-          <Button text="Read" style={{ textAlign: "left" }} />
+          <StyledImage
+            height="200px"
+            width="200px"
+            src={image ? image : PlaceHolderImage}
+          />
         </Link>
       </ImageWrapper>
       <TextWrapper>
         <h2>{title}</h2>
         <p>{date}</p>
+        <StyledP>{author}</StyledP>
+        <RightArrowIcon linkto={`/blog/${ID}/${slug}`} />
       </TextWrapper>
     </CardWrapper>
   );

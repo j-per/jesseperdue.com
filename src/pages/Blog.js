@@ -1,10 +1,8 @@
 import React from "react";
-import Navigation from "../components/Navigation";
 import BlogCard from "../components/Blog/BlogCard";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import Button from "../components/Elements/Button";
+import LeftArrowIcon from "../components/Blog/LeftArrowIcon";
 
 const BLOG_URL = `https://public-api.wordpress.com/rest/v1.1/sites/jesseperdueblog.home.blog/posts`;
 
@@ -13,6 +11,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #282c35;
+  position: relative;
 `;
 
 const BlogCardWrapper = styled.div`
@@ -65,9 +64,8 @@ class Blog extends React.Component {
   render() {
     return (
       <div>
-        <Navigation />
-
         <Wrapper>
+          <LeftArrowIcon />
           <StyleH1>Blog</StyleH1>
           <BlogCardWrapper>{this.test()}</BlogCardWrapper>
         </Wrapper>
