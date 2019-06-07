@@ -5,15 +5,17 @@ import styled from "styled-components";
 const StyledLink = styled(Link)`
   display: inline;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 10px;
+  right: 10px;
 `;
 
 const ArrowIcon = styled.svg`
   fill: #111;
+  transition: 250ms;
   &:hover {
     fill: white;
     cursor: pointer;
+    transform: scale(1.3);
   }
 `;
 

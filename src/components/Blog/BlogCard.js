@@ -6,14 +6,14 @@ import PlaceHolderImage from "../../pictures/placeholder.png";
 import RightArrowIcon from "./RightArrowIcon";
 
 const CardWrapper = styled.div`
-  margin: 1rem 0;
+  margin: 1rem 1rem;
   display: flex;
   position: relative;
-  padding: 1rem;
+  padding: 0.5rem;
   max-width: 500px;
   background-color: white;
   border-radius: 5px;
-  transition: 250ms;
+  transition: 200ms;
   @media (max-width: 700px) {
     flex-direction: column;
     align-items: center;
@@ -29,7 +29,6 @@ const StyledImage = styled.img`
   width: ${props => props.width};
   height: ${props => props.height};
   object-fit: cover;
-  margin-bottom: 1rem;
   border-radius: 5px;
 `;
 
@@ -43,7 +42,6 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  position: relative;
 `;
 
 const StyledP = styled.p`
@@ -51,6 +49,17 @@ const StyledP = styled.p`
 `;
 
 const BlogCard = ({ image, title, date, author, ID, content, slug }) => {
+  const shortenTitle = title => {
+    if (title.length > 35) {
+      const splitTitle = title.split("");
+      splitTitle.length = 35;
+      const returnedTitle = `${splitTitle.join("")}...`;
+      return returnedTitle;
+    } else {
+      return title;
+    }
+  };
+
   return (
     <CardWrapper>
       <ImageWrapper>
@@ -63,7 +72,7 @@ const BlogCard = ({ image, title, date, author, ID, content, slug }) => {
         </Link>
       </ImageWrapper>
       <TextWrapper>
-        <h2>{title}</h2>
+        <h2>{shortenTitle(title)}</h2>
         <p>{date}</p>
         <StyledP>{author}</StyledP>
         <RightArrowIcon linkto={`/blog/${ID}/${slug}`} />

@@ -16,8 +16,10 @@ const StyledLink = styled(Link)`
 const ArrowIconLeft = styled.svg`
   fill: white;
   width: 50px;
+  transition: 250ms;
   &:hover {
     fill: #33bf82;
+    transform: scale(1.07);
   }
   @media (max-width: 700px) {
     width: 30px;
@@ -25,7 +27,7 @@ const ArrowIconLeft = styled.svg`
 `;
 
 const LeftArrowIcon = props => (
-  <StyledLink to="/">
+  <StyledLink to={props.route}>
     <ArrowIconLeft
       aria-hidden="true"
       focusable="false"

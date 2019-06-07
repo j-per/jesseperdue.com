@@ -39,7 +39,7 @@ class Blog extends React.Component {
       .catch(err => console.log(err));
   }
 
-  test() {
+  returnBlogCard() {
     if (this.state.posts) {
       const blogCardProps = this.state.posts.map(post => {
         return (
@@ -65,9 +65,9 @@ class Blog extends React.Component {
     return (
       <div>
         <Wrapper>
-          <LeftArrowIcon />
+          <LeftArrowIcon route="/" />
           <StyleH1>Blog</StyleH1>
-          <BlogCardWrapper>{this.test()}</BlogCardWrapper>
+          <BlogCardWrapper>{this.returnBlogCard()}</BlogCardWrapper>
         </Wrapper>
       </div>
     );
