@@ -9,7 +9,7 @@ import Error from "./components/Error";
 class App extends React.Component {
   render() {
     return (
-      <Router>
+      <Router className="test">
         <Route exact path="/" component={Home} />
         <Route exact path="/blog" component={Blog} />
         <Route path="/blog/:id/:slug" component={BlogDetails} />

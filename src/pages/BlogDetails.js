@@ -2,26 +2,29 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import Button from "../components/Elements/Button";
 import LeftArrowIcon from "../components/Blog/LeftArrowIcon";
 
-const Wrapper = styled.div`
+const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 2rem 20rem;
-  position: relative;
+  width: 60vw;
+  margin: 0 auto;
+  color: white;
+  padding: 2rem;
+  @media (max-width: 1000px) {
+    width: 80vw;
+  }
+  img {
+    max-width: 100%;
+  }
   div {
     p {
       line-height: 2rem;
       font-size: 20px;
     }
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      list-style-type: none;
 
+    ul {
       li {
-        padding: 1rem;
         img {
           height: 200px;
           width: 200px;
@@ -53,15 +56,17 @@ class BlogDetails extends React.Component {
 
   render() {
     return (
-      <Wrapper>
-        <LeftArrowIcon fill="#111" route="/blog" />
-        <h1>{this.state.post ? this.state.post.title : "Loading..."}</h1>
-        <div
-          dangerouslySetInnerHTML={this.createMarkup(
-            this.state.post ? this.state.post.content : "Loading"
-          )}
-        />
-      </Wrapper>
+      <div style={{ background: "#282c35" }}>
+        <ContentWrapper>
+          <LeftArrowIcon route="/blog" top="2rem" left="2rem" fill="white" />
+          <h1>{this.state.post ? this.state.post.title : "Loading..."}</h1>
+          <div
+            dangerouslySetInnerHTML={this.createMarkup(
+              this.state.post ? this.state.post.content : "Loading"
+            )}
+          />
+        </ContentWrapper>
+      </div>
     );
   }
 }

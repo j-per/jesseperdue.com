@@ -5,29 +5,34 @@ import styled from "styled-components";
 const StyledLink = styled(Link)`
   display: inline;
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  transition: 200ms;
+  top: ${props => props.top};
+  left: ${props => props.left};
   @media (max-width: 700px) {
     top: 1rem;
     left: 1rem;
   }
+  fill: ${props => props.fill};
+  &:hover {
+    fill: #33bf82;
+    transform: scale(1.03);
+  }
 `;
 
 const ArrowIconLeft = styled.svg`
-  fill: white;
   width: 50px;
-  transition: 250ms;
-  &:hover {
-    fill: #33bf82;
-    transform: scale(1.07);
-  }
   @media (max-width: 700px) {
-    width: 30px;
+    width: 40px;
   }
 `;
 
 const LeftArrowIcon = props => (
-  <StyledLink to={props.route}>
+  <StyledLink
+    to={props.route}
+    top={props.top}
+    left={props.left}
+    fill={props.fill}
+  >
     <ArrowIconLeft
       aria-hidden="true"
       focusable="false"

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import PlaceHolderImage from "../../pictures/placeholder.png";
 import RightArrowIcon from "./RightArrowIcon";
 
-const CardWrapper = styled.div`
+const CardWrapper = styled(Link)`
   margin: 1rem 1rem;
   display: flex;
   position: relative;
@@ -14,14 +14,15 @@ const CardWrapper = styled.div`
   background-color: white;
   border-radius: 5px;
   transition: 200ms;
+  color: #282c35;
   @media (max-width: 700px) {
     flex-direction: column;
     align-items: center;
-    max-width: 300px;
   }
   &:hover {
     color: white;
     background: #3ac489;
+    text-decoration: none;
   }
 `;
 
@@ -30,6 +31,9 @@ const StyledImage = styled.img`
   height: ${props => props.height};
   object-fit: cover;
   border-radius: 5px;
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -42,6 +46,9 @@ const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
+  @media (max-width: 700px) {
+    margin-left: 0;
+  }
 `;
 
 const StyledP = styled.p`
@@ -50,9 +57,9 @@ const StyledP = styled.p`
 
 const BlogCard = ({ image, title, date, author, ID, content, slug }) => {
   const shortenTitle = title => {
-    if (title.length > 35) {
+    if (title.length > 60) {
       const splitTitle = title.split("");
-      splitTitle.length = 35;
+      splitTitle.length = 60;
       const returnedTitle = `${splitTitle.join("")}...`;
       return returnedTitle;
     } else {
@@ -61,18 +68,16 @@ const BlogCard = ({ image, title, date, author, ID, content, slug }) => {
   };
 
   return (
-    <CardWrapper>
+    <CardWrapper to={`/blog/${ID}/${slug}`}>
       <ImageWrapper>
-        <Link to={`/blog/${ID}/${slug}`}>
-          <StyledImage
-            height="200px"
-            width="200px"
-            src={image ? image : PlaceHolderImage}
-          />
-        </Link>
+        <StyledImage
+          height="200px"
+          width="200px"
+          src={image ? image : PlaceHolderImage}
+        />
       </ImageWrapper>
       <TextWrapper>
-        <h2>{shortenTitle(title)}</h2>
+        <h3>{shortenTitle(title)}</h3>
         <p>{date}</p>
         <StyledP>{author}</StyledP>
         <RightArrowIcon linkto={`/blog/${ID}/${slug}`} />

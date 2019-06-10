@@ -10,7 +10,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #282c35;
   position: relative;
 `;
 
@@ -63,9 +62,9 @@ class Blog extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{ background: "#282c35", height: "100%" }}>
         <Wrapper>
-          <LeftArrowIcon route="/" />
+          <LeftArrowIcon route="/" top="2rem" left="2rem" fill="white" />
           <StyleH1>Blog</StyleH1>
           <BlogCardWrapper>{this.returnBlogCard()}</BlogCardWrapper>
         </Wrapper>
