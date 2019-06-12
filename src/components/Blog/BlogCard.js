@@ -3,21 +3,20 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import PlaceHolderImage from "../../pictures/placeholder.png";
-import RightArrowIcon from "./RightArrowIcon";
 
 const CardWrapper = styled(Link)`
   margin: 1rem 1rem;
   display: flex;
   position: relative;
   padding: 0.5rem;
-  max-width: 500px;
+  width: 500px;
   background-color: white;
   border-radius: 5px;
   transition: 200ms;
   color: #282c35;
   @media (max-width: 700px) {
     flex-direction: column;
-    align-items: center;
+    width: 90vw;
   }
   &:hover {
     color: white;
@@ -80,7 +79,6 @@ const BlogCard = ({ image, title, date, author, ID, content, slug }) => {
         <h3>{shortenTitle(title)}</h3>
         <p>{date}</p>
         <StyledP>{author}</StyledP>
-        <RightArrowIcon linkto={`/blog/${ID}/${slug}`} />
       </TextWrapper>
     </CardWrapper>
   );

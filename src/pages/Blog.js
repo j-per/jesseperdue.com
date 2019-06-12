@@ -6,71 +6,73 @@ import LeftArrowIcon from "../components/Blog/LeftArrowIcon";
 
 const BLOG_URL = `https://public-api.wordpress.com/rest/v1.1/sites/jesseperdueblog.home.blog/posts`;
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-`;
-
-const BlogCardWrapper = styled.div`
-  border-radius: 5px;
-`;
-
-const StyleH1 = styled.h1`
-  font-size: 100px;
-  font-weight: bold;
-  color: #3ac489;
-  text-shadow: 2px 2px #007bff;
-`;
-
 class Blog extends React.Component {
   state = {
-    posts: null
+    posts: []
   };
 
   componentWillMount() {
     fetch(BLOG_URL)
       .then(res => res.json())
       .then(json => {
-        this.setState({ posts: json.posts });
+        const posts = json.posts.map(post => {
+          return {
+            title: post.title,
+            date: post.date,
+            author: post.author.name,
+            image: post.featured_image,
+            slug: post.slug,
+            ID: post.ID
+          };
+        });
+        this.setState({
+          posts: posts
+        });
       })
       .catch(err => console.log(err));
   }
 
-  returnBlogCard() {
-    if (this.state.posts) {
-      const blogCardProps = this.state.posts.map(post => {
-        return (
-          <BlogCard
-            title={post.title}
-            date={post.date}
-            author={post.author.name}
-            image={post.featured_image}
-            slug={post.slug}
-            ID={post.ID}
-            key={post.ID}
-            content={post.content}
-          />
-        );
-      });
-      return blogCardProps;
-    } else {
-      return "Loading";
-    }
-  }
-
   render() {
+    const blogCard = this.state.posts.map(post => {
+      return (
+        <BlogCard
+          title={post.title}
+          date={post.date}
+          author={post.author}
+          image={post.image}
+          slug={post.slug}
+          ID={post.ID}
+          key={post.ID}
+          content={post.content}
+        />
+      );
+    });
+
     return (
-      <div style={{ background: "#282c35", height: "100%" }}>
+      <div>
         <Wrapper>
           <LeftArrowIcon route="/" top="2rem" left="2rem" fill="white" />
-          <StyleH1>Blog</StyleH1>
-          <BlogCardWrapper>{this.returnBlogCard()}</BlogCardWrapper>
+          <StyledHeading>Blog</StyledHeading>
+          {blogCard}
         </Wrapper>
       </div>
     );
   }
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: #282c35;
+`;
+
+const StyledHeading = styled.h1`
+  font-size: 100px;
+  font-weight: bold;
+  color: #3ac489;
+  text-shadow: 2px 2px #007bff;
+`;
 
 export default Blog;

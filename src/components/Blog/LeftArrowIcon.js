@@ -38,7 +38,6 @@ const LeftArrowIcon = props => (
       focusable="false"
       data-prefix="fas"
       data-icon="arrow-circle-left"
-      class="svg-inline--fa fa-arrow-circle-left fa-w-16"
       role="img"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
