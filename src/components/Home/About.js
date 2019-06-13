@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./About.css";
-import Jesse from "../pictures/jesse.png";
+import Jesse from "../../pictures/jesse.png";
 
 const About = () => (
   <section className="about_container" id="about">

@@ -49,13 +49,11 @@ class Blog extends React.Component {
     });
 
     return (
-      <div>
-        <Wrapper>
-          <LeftArrowIcon route="/" top="2rem" left="2rem" fill="white" />
-          <StyledHeading>Blog</StyledHeading>
-          {blogCard}
-        </Wrapper>
-      </div>
+      <Wrapper>
+        <LeftArrowIcon route="/" top="2rem" left="2rem" fill="white" />
+        <StyledHeading>Blog</StyledHeading>
+        {blogCard}
+      </Wrapper>
     );
   }
 }

@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
-import Error from "./components/Error";
 
 class App extends React.Component {
   render() {
