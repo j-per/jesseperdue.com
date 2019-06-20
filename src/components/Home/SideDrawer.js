@@ -2,15 +2,25 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const SideDrawer = props => {
+import "./SideDrawer.css";
+
+const SideDrawer = ({ show }) => {
+  const test = () => {
+    if (show) {
+      return "closed open";
+    } else {
+      return "closed";
+    }
+  };
+
   return (
-    <SideDrawerWrapper>
+    <SideDrawerWrapper show={show} className={test()}>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <SideDrawerLink to="/">Home</SideDrawerLink>
         </li>
         <li>
-          <Link to="/blog">Blog</Link>
+          <SideDrawerLink to="/blog">Blog</SideDrawerLink>
         </li>
       </ul>
     </SideDrawerWrapper>
@@ -19,10 +29,10 @@ const SideDrawer = props => {
 
 const SideDrawerWrapper = styled.nav`
   height: 100%;
-  background-color: white;
   z-index: 10;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   position: fixed;
+  background: white;
   top: 0;
   right: 0;
   width: 400px;
@@ -30,9 +40,19 @@ const SideDrawerWrapper = styled.nav`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: 70px;
+    list-style: none;
+    margin: 0 auto;
   }
   @media (max-width: 768px) {
     width: 60vw;
+  }
+`;
+
+const SideDrawerLink = styled(Link)`
+  color: #27b47b;
+  &:hover {
+    text-decoration: none;
   }
 `;
 

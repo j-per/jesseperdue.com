@@ -12,12 +12,10 @@ const BurgerMenu = props => (
 const BurgerMenuWrapper = styled.button`
   height: 25px;
   width: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  position: fixed;
-  top: 1.4rem;
-  right: 4rem;
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
   background-color: transparent;
   overflow: hidden;
   cursor: pointer;
@@ -26,6 +24,11 @@ const BurgerMenuWrapper = styled.button`
   align-content: center;
   padding: 0;
   &:focus {
+  }
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 `;
 

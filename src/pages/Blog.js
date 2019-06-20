@@ -3,6 +3,7 @@ import BlogCard from "../components/Blog/BlogCard";
 import styled from "styled-components";
 
 import LeftArrowIcon from "../components/Blog/LeftArrowIcon";
+import BurgerMenu from "../components/Home/BurgerMenu";
 
 const BLOG_URL = `https://public-api.wordpress.com/rest/v1.1/sites/jesseperdueblog.home.blog/posts`;
 

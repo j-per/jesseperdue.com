@@ -31,6 +31,10 @@ const NavWrapper = styled.nav`
       list-style: none;
     }
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const SyledLink = styled(Link)`
