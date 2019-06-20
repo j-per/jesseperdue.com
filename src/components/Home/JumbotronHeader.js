@@ -1,6 +1,10 @@
 import React from "react";
 import "./JumbotronHeader.css";
 import { Jumbotron, Container, Row, Col } from "react-bootstrap";
+import NewNav from "./NewNav";
+import BurgerMenu from "./BurgerMenu";
+import SideDrawer from "./SideDrawer";
+import Backdrop from "./Backdrop";
 
 class JumbotronHeader extends React.Component {
   constructor(props) {
@@ -8,7 +12,8 @@ class JumbotronHeader extends React.Component {
 
     this.state = {
       counter: 0,
-      words: ["Create", "Code", "Design", "Develop", "Teach"]
+      words: ["Create", "Code", "Design", "Develop", "Teach"],
+      burgerMenuIsOpen: false
     };
   }
 
@@ -23,10 +28,30 @@ class JumbotronHeader extends React.Component {
     }, 1500);
   }
 
+  burgerMenuHandler = () => {
+    this.setState({
+      burgerMenuIsOpen: !this.state.burgerMenuIsOpen
+    });
+  };
+
+  backdropClickHandler = () => {
+    this.setState({
+      burgerMenuIsOpen: false
+    });
+  };
+
   render() {
+    let backdrop;
+    if (this.state.burgerMenuIsOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />;
+    }
     return (
       <section id="jumbotronheader">
         <Jumbotron>
+          <NewNav />
+          <BurgerMenu burgerMenuHandler={this.burgerMenuHandler} />
+          <SideDrawer show={this.state.burgerMenuIsOpen} />
+          {backdrop}
           <Container>
             <Row>
               <Col lg={true}>

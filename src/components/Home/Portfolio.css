@@ -16,7 +16,7 @@
 
 .portfolio_box_1 {
   background: linear-gradient(rgba(43, 196, 131, 0.5), rgba(5, 82, 255, 0.5)),
-    url("../pictures/beach.jpeg");
+    url("../../pictures/beach.jpeg");
 }
 
 .portfolio_box_2 {
@@ -25,7 +25,7 @@
       rgba(95, 195, 228, 0.5),
       rgba(229, 93, 135, 0.5)
     ),
-    url("../pictures/city.jpeg") center; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    url("../../pictures/city.jpeg") center; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .portfolio_box_3 {
@@ -34,7 +34,7 @@
       rgba(36, 11, 54, 0.5),
       rgba(195, 20, 50, 0.5)
     ),
-    url("../pictures/guitar.jpeg") center; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    url("../../pictures/guitar.jpeg") center; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 a:hover {
