@@ -40,6 +40,7 @@ class BlogDetails extends React.Component {
   };
 
   componentDidMount() {
+    document.body.className = "blogdetails";
     const postID = this.props.match.params.id;
     fetch(
       `https://public-api.wordpress.com/rest/v1.1/sites/jesseperdueblog.home.blog/posts/${postID}`
@@ -55,7 +56,7 @@ class BlogDetails extends React.Component {
 
   render() {
     return (
-      <div style={{ background: "#282c35" }}>
+      <div>
         <ContentWrapper>
           <LeftArrowIcon route="/blog" top="2rem" left="2rem" fill="white" />
           <h1>{this.state.post ? this.state.post.title : "Loading..."}</h1>

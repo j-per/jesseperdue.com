@@ -1,63 +1,46 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-class Navigation extends React.Component {
-  render() {
-    return (
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        style={{ backgroundColor: "#f7f7f7" }}
-      >
-        <Navbar.Brand style={{ fontSize: "22px" }}>Jesse Perdue</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ml-auto">
-            <Link
-              activeClass="active"
-              to="expertise"
-              spy={true}
-              smooth="easeInOutQuint"
-              offset={-45}
-              duration={1000}
-              style={{ fontSize: "18px", marginRight: "20px" }}
-              role="button"
-              className="nav-link"
-            >
-              Expertise
-            </Link>
-            <Link
-              activeClass="active"
-              to="about"
-              spy={true}
-              smooth="easeInOutQuint"
-              duration={1000}
-              style={{ fontSize: "18px", marginRight: "20px" }}
-              role="button"
-              className="nav-link"
-            >
-              About
-            </Link>
-            <Link
-              activeClass="active"
-              to="contact"
-              spy={true}
-              smooth="easeInOutQuint"
-              duration={1000}
-              style={{ fontSize: "18px", marginRight: "20px" }}
-              role="button"
-              className="nav-link"
-            >
-              Contact
-            </Link>
-          </Nav>
-          <Nav />
-        </Navbar.Collapse>
-      </Navbar>
-    );
+const NewNav = () => (
+  <NavWrapper>
+    <ul>
+      <li>
+        <SyledLink to="/blog">Blog</SyledLink>
+      </li>
+    </ul>
+  </NavWrapper>
+);
+
+const NavWrapper = styled.nav`
+  display: flex;
+  font-size: 20px;
+  justify-content: flex-end;
+  position: absolute;
+  right: 3rem;
+  top: 2.5rem;
+  ul {
+    display: flex;
+    li {
+      list-style: none;
+    }
   }
-}
 
-export default Navigation;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const SyledLink = styled(Link)`
+  color: white;
+  padding: 0 10px;
+  transition: 400ms;
+  border-top: 2px solid transparent;
+  &:hover {
+    text-decoration: none;
+    border-top: 2px solid #3ac489;
+    color: white;
+  }
+`;
+
+export default NewNav;

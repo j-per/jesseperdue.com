@@ -3,7 +3,6 @@ import BlogCard from "../components/Blog/BlogCard";
 import styled from "styled-components";
 
 import LeftArrowIcon from "../components/Blog/LeftArrowIcon";
-import BurgerMenu from "../components/Home/BurgerMenu";
 
 const BLOG_URL = `https://public-api.wordpress.com/rest/v1.1/sites/jesseperdueblog.home.blog/posts`;
 
@@ -12,7 +11,8 @@ class Blog extends React.Component {
     posts: []
   };
 
-  componentWillMount() {
+  componentDidMount() {
+    document.body.className = "blog";
     fetch(BLOG_URL)
       .then(res => res.json())
       .then(json => {
@@ -64,7 +64,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  background-color: #282c35;
 `;
 
 const StyledHeading = styled.h1`

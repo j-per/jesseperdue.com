@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./SideDrawer.css";
 
 const SideDrawer = ({ show }) => {
-  const test = () => {
+  const addClassName = () => {
     if (show) {
       return "closed open";
     } else {
@@ -14,11 +14,8 @@ const SideDrawer = ({ show }) => {
   };
 
   return (
-    <SideDrawerWrapper show={show} className={test()}>
+    <SideDrawerWrapper show={show} className={addClassName()}>
       <ul>
-        <li>
-          <SideDrawerLink to="/">Home</SideDrawerLink>
-        </li>
         <li>
           <SideDrawerLink to="/blog">Blog</SideDrawerLink>
         </li>
@@ -32,6 +29,7 @@ const SideDrawerWrapper = styled.nav`
   z-index: 10;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   position: fixed;
+  display: flex;
   background: white;
   top: 0;
   right: 0;
@@ -40,7 +38,7 @@ const SideDrawerWrapper = styled.nav`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 70px;
+    font-size: 40px;
     list-style: none;
     margin: 0 auto;
   }

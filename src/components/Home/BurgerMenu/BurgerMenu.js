@@ -17,14 +17,10 @@ const BurgerMenuWrapper = styled.button`
   top: 2rem;
   right: 2rem;
   background-color: transparent;
-  overflow: hidden;
   cursor: pointer;
-  background-repeat: no-repeat;
   border: none;
-  align-content: center;
   padding: 0;
-  &:focus {
-  }
+
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
