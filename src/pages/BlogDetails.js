@@ -54,6 +54,8 @@ const ContentWrapper = styled.div`
     max-width: 100%;
   }
   pre {
+    padding: 1rem;
+    border-radius: 5px;
     background: #cc2b5e; /* fallback for old browsers */
     background: -webkit-linear-gradient(
       to right,
