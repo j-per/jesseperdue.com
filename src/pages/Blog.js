@@ -34,6 +34,7 @@ class Blog extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     const blogCard = this.state.posts.map(post => {
       return (
         <BlogCard
@@ -53,6 +54,7 @@ class Blog extends React.Component {
       <Wrapper>
         <LeftArrowIcon route="/" top="2rem" left="2rem" fill="white" />
         <StyledHeading>Blog</StyledHeading>
+        <StyledSubheading>A personal Blog By Jesse Perdue</StyledSubheading>
         {blogCard}
       </Wrapper>
     );
@@ -71,6 +73,10 @@ const StyledHeading = styled.h1`
   font-weight: bold;
   color: #3ac489;
   text-shadow: 2px 2px #007bff;
+`;
+
+const StyledSubheading = styled.h5`
+  color: white;
 `;
 
 export default Blog;

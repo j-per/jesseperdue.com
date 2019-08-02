@@ -4,6 +4,56 @@ import { Link } from "react-router-dom";
 
 import PlaceHolderImage from "../../pictures/placeholder.png";
 
+const BlogCard = ({ image, title, date, author, ID, content, slug }) => {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  const newDate = new Date("2019-06-25T05:30:50+00:00");
+  const year = newDate.getFullYear();
+  const month = newDate.getMonth() + 1;
+  const dt = newDate.getDate();
+  const renderedDate = `${months[month - 1]} ${dt}, ${year}`;
+
+  const shortenTitle = title => {
+    if (title.length > 60) {
+      const splitTitle = title.split("");
+      splitTitle.length = 60;
+      const returnedTitle = `${splitTitle.join("")}...`;
+      return returnedTitle;
+    } else {
+      return title;
+    }
+  };
+
+  return (
+    <CardWrapper to={`/blog/${ID}/${slug}`}>
+      <ImageWrapper>
+        <StyledImage
+          height="150px"
+          width="150px"
+          src={image ? image : PlaceHolderImage}
+        />
+      </ImageWrapper>
+      <TextWrapper>
+        <h3>{shortenTitle(title)}</h3>
+        <p>{renderedDate}</p>
+      </TextWrapper>
+    </CardWrapper>
+  );
+};
+
 const CardWrapper = styled(Link)`
   margin: 1rem 1rem;
   display: flex;
@@ -20,7 +70,12 @@ const CardWrapper = styled(Link)`
   }
   &:hover {
     color: white;
-    background: #3ac489;
+    background: linear-gradient(
+      48deg,
+      rgba(58, 196, 137, 1) 0%,
+      rgba(58, 196, 137, 1) 39%,
+      rgba(0, 123, 255, 1) 100%
+    ); /* w3c */
     text-decoration: none;
   }
 `;
@@ -44,44 +99,10 @@ const TextWrapper = styled.div`
   margin-left: 1rem;
   display: flex;
   flex-direction: column;
-  text-align: left;
+  position: relative;
   @media (max-width: 700px) {
     margin-left: 0;
   }
 `;
-
-const StyledP = styled.p`
-  font-style: italic;
-`;
-
-const BlogCard = ({ image, title, date, author, ID, content, slug }) => {
-  const shortenTitle = title => {
-    if (title.length > 60) {
-      const splitTitle = title.split("");
-      splitTitle.length = 60;
-      const returnedTitle = `${splitTitle.join("")}...`;
-      return returnedTitle;
-    } else {
-      return title;
-    }
-  };
-
-  return (
-    <CardWrapper to={`/blog/${ID}/${slug}`}>
-      <ImageWrapper>
-        <StyledImage
-          height="200px"
-          width="200px"
-          src={image ? image : PlaceHolderImage}
-        />
-      </ImageWrapper>
-      <TextWrapper>
-        <h3>{shortenTitle(title)}</h3>
-        <p>{date}</p>
-        <StyledP>{author}</StyledP>
-      </TextWrapper>
-    </CardWrapper>
-  );
-};
 
 export default BlogCard;

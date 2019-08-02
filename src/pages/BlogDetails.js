@@ -3,37 +3,6 @@ import styled from "styled-components";
 
 import LeftArrowIcon from "../components/Blog/LeftArrowIcon";
 
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 60vw;
-  margin: 0 auto;
-  color: white;
-  padding: 2rem;
-  @media (max-width: 1000px) {
-    width: 80vw;
-  }
-  img {
-    max-width: 100%;
-  }
-  div {
-    p {
-      line-height: 2rem;
-      font-size: 20px;
-    }
-
-    ul {
-      li {
-        img {
-          height: 200px;
-          width: 200px;
-          object-fit: cover;
-        }
-      }
-    }
-  }
-`;
-
 class BlogDetails extends React.Component {
   state = {
     post: null
@@ -70,5 +39,62 @@ class BlogDetails extends React.Component {
     );
   }
 }
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  margin: 0 auto;
+  color: white;
+  padding: 2rem;
+  @media (max-width: 700px) {
+    width: 90vw;
+  }
+  img {
+    max-width: 100%;
+  }
+  pre {
+    background: #cc2b5e; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #753a88,
+      #cc2b5e
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #753a88,
+      #cc2b5e
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: white;
+  }
+  h1 {
+    padding-bottom: 2rem;
+    text-decoration: underline;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: bold;
+  }
+  div {
+    p {
+      line-height: 2rem;
+      font-size: 20px;
+    }
+
+    ul {
+      li {
+        img {
+          height: 200px;
+          width: 200px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+`;
 
 export default BlogDetails;
