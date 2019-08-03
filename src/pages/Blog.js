@@ -34,7 +34,6 @@ class Blog extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const blogCard = this.state.posts.map(post => {
       return (
         <BlogCard
