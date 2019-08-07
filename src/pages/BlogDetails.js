@@ -27,7 +27,7 @@ class BlogDetails extends React.Component {
     return (
       <div>
         <ContentWrapper>
-          <LeftArrowIcon route="/blog" top="2rem" left="2rem" fill="white" />
+          <LeftArrowIcon route="/blog" top="1rem" left="1rem" fill="white" />
           <h1>{this.state.post ? this.state.post.title : "Loading..."}</h1>
           <div
             dangerouslySetInnerHTML={this.createMarkup(
@@ -43,15 +43,13 @@ class BlogDetails extends React.Component {
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 70vw;
   margin: 0 auto;
   color: white;
   padding: 2rem;
-  @media (max-width: 700px) {
-    width: 90vw;
-  }
+  max-width: 800px;
   img {
     max-width: 100%;
+    margin: 1rem 0;
   }
   pre {
     padding: 1rem;
@@ -71,7 +69,6 @@ const ContentWrapper = styled.div`
     color: white;
   }
   h1 {
-    padding-bottom: 2rem;
     text-decoration: underline;
   }
   h1,
@@ -80,6 +77,7 @@ const ContentWrapper = styled.div`
   h4,
   h5 {
     font-weight: bold;
+    padding: 1rem 0;
   }
   div {
     p {

@@ -21,7 +21,7 @@ const StyledLink = styled(Link)`
 
 const ArrowIconLeft = styled.svg`
   width: 50px;
-  @media (max-width: 700px) {
+  @media (max-width: 960px) {
     width: 20px;
   }
 `;
