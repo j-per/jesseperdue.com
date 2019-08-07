@@ -20,7 +20,7 @@ const BlogCard = ({ image, title, date, author, ID, content, slug }) => {
     "December"
   ];
 
-  const newDate = new Date("2019-06-25T05:30:50+00:00");
+  const newDate = new Date(date);
   const year = newDate.getFullYear();
   const month = newDate.getMonth() + 1;
   const dt = newDate.getDate();
