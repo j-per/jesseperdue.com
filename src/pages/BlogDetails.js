@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import LeftArrowIcon from "../components/Blog/LeftArrowIcon";
+import formatDate from "../components/Functions/formatDate";
 
 class BlogDetails extends React.Component {
   state = {
@@ -17,6 +18,15 @@ class BlogDetails extends React.Component {
       .then(res => res.json())
       .then(res => this.setState({ post: res }))
       .catch(err => console.log(err));
+  }
+
+  componentDidUpdate() {
+    //This function inserts the date after the H1 title since all of the HTML is returned from the WP API
+    const element = document.createElement("p");
+    element.innerText = formatDate(this.state.post.modified);
+    element.classList.add("blogDate");
+    const blogTitle = document.querySelector("h1");
+    blogTitle.insertAdjacentElement("afterend", element);
   }
 
   createMarkup(markup) {
@@ -41,6 +51,11 @@ class BlogDetails extends React.Component {
 }
 
 const ContentWrapper = styled.div`
+  .blogDate {
+    font-style: italic;
+    margin-top: -1rem;
+    font-size: 0.9rem;
+  }
   display: flex;
   flex-direction: column;
   margin: 0 auto;

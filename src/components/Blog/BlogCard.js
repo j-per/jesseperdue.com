@@ -2,30 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import formatDate from "../../utils/formatDate";
+
 import PlaceHolderImage from "../../pictures/placeholder.png";
 
 const BlogCard = ({ image, title, date, author, ID, content, slug }) => {
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ];
-
-  const newDate = new Date(date);
-  const year = newDate.getFullYear();
-  const month = newDate.getMonth() + 1;
-  const dt = newDate.getDate();
-  const renderedDate = `${months[month - 1]} ${dt}, ${year}`;
-
   const shortenTitle = title => {
     if (title.length > 70) {
       const splitTitle = title.split("");
@@ -48,7 +29,7 @@ const BlogCard = ({ image, title, date, author, ID, content, slug }) => {
       </ImageWrapper>
       <TextWrapper>
         <h3>{shortenTitle(title)}</h3>
-        <p>{renderedDate}</p>
+        <p>{formatDate(date)}</p>
       </TextWrapper>
     </CardWrapper>
   );
