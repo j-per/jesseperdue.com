@@ -78,6 +78,8 @@ const StyledHeading = styled.h1`
 
 const StyledSubheading = styled.h5`
   color: white;
+  text-align: center;
+  width: 70%;
 `;
 
 export default Blog;
