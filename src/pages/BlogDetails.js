@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import LeftArrowIcon from "../components/Blog/LeftArrowIcon";
-import formatDate from "../components/Functions/formatDate";
+import formatDate from "../utils/formatDate";
 
 class BlogDetails extends React.Component {
   state = {
