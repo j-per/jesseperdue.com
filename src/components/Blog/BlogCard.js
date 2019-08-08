@@ -27,9 +27,9 @@ const BlogCard = ({ image, title, date, author, ID, content, slug }) => {
   const renderedDate = `${months[month - 1]} ${dt}, ${year}`;
 
   const shortenTitle = title => {
-    if (title.length > 60) {
+    if (title.length > 70) {
       const splitTitle = title.split("");
-      splitTitle.length = 60;
+      splitTitle.length = 70;
       const returnedTitle = `${splitTitle.join("")}...`;
       return returnedTitle;
     } else {
@@ -59,7 +59,7 @@ const CardWrapper = styled(Link)`
   display: flex;
   position: relative;
   padding: 0.5rem;
-  width: 500px;
+  width: 550px;
   background-color: white;
   border-radius: 5px;
   transition: 200ms;

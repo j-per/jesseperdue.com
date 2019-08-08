@@ -8,7 +8,7 @@ import BlogDetails from "./pages/BlogDetails";
 class App extends React.Component {
   render() {
     return (
-      <Router className="test">
+      <Router>
         <Route exact path="/" component={Home} />
         <Route exact path="/blog" component={Blog} />
         <Route path="/blog/:id/:slug" component={BlogDetails} />

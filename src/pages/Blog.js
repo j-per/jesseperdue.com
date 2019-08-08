@@ -53,7 +53,9 @@ class Blog extends React.Component {
       <Wrapper>
         <LeftArrowIcon route="/" top="1rem" left="1rem" fill="white" />
         <StyledHeading>Blog</StyledHeading>
-        <StyledSubheading>A Personal Blog by Jesse Perdue</StyledSubheading>
+        <StyledSubheading>
+          A Blog About Web Development by Jesse Perdue
+        </StyledSubheading>
         {blogCard}
       </Wrapper>
     );
